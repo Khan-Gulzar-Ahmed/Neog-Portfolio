@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Language</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+    :root{
+        --border:green;
+        --text-color:white;
+    }
+    html{
+        font-family: 'Kalam', cursive;
+        background-image: linear-gradient(to top, green,grey,white,grey,green);
+    }
+    .container{
+        display: grid;
+        height: 80vh;
+        
+    }
+    .text-area{
+        display: inline-block;
+        padding: 10px 10px;
+        text-align: center;
+        
+    }
+    textarea{
+        width: 40vw;
+        border: 2px solid var(--border);
+        border-radius: 5px;
+        font-size: 1.5rem;
+        
+    }
+    h1{
+        text-align: center;
+        color: var(--text-color);
+    }
+    .btn{
+        text-align: center;
+    }
+    button{
+        height: 50px;
+        width: 250px;
+        font-size: 20px;
+        border: 2px solid var(--border);
+        border-radius: 5px;
+        background-color: var(--border);
+        color: var(--text-color);
+        cursor: pointer;
+    }
+    #note{
+        text-align: justify;
+        color: var(--text-color);
+        font-size: large;
+        padding: 1rem 2rem;
+    }
+    #output:hover{
+        cursor: not-allowed;
+    }
+   #note p{
+       text-align: center;
+   }
+   
+
+
+   
+</style>
+<body>
+    <div class="container">
+        <h1>SEE YOUR ENGLISH IN FUNNY WAY OF BANANA LANGUAGE </h1>
+        <div class="text-area">
+            <textarea name="inputarea" id="input" cols="30" rows="10" class="inputarea" placeholder="Input Here in Enlish . . "></textarea>
+
+            <textarea readonly name="outputarea" id="output" cols="30" rows="10" class="inputarea" placeholder="Translated output in Banana .."></textarea>
+    </div>
+        <div class="btn">
+            <button id="click">
+                Click Here For Magic
+            </button>
+            
+        </div>
+    </div>
+    <div id="note">
+        <p>
+            <b>About Banana Language : </b> </p> language of the Minions (sometimes called "Minionese" or the "Banana language") in the Dispicable Me series is a mashup of several different languages from all over the world. Spanish, Indonesian and Malay, Japanese, Italian, and several other languages have worked their way into Minion-talk throughout history as the move from one evil-overlord to the next.
+        
+    </div>
+    
+</body>
+<script>
+    
+    var inputText=document.getElementById('input');
+    var outputText=document.getElementById('output');
+    var btnclick=document.getElementById('click');
+    var serverURL="https://api.funtranslations.com/translate/minion.json";
+
+    function getTranslationURL(text){
+        return serverURL+ "?"+"text="+text;
+    }
+    function errorHandler(error){
+        console.log("Error Occured",error);
+        alert('Something went wrong. please try again later ! ');
+    }
+    btnclick.addEventListener('click',function(){
+        
+            getinput=inputText.value;
+            
+            fetch(getTranslationURL(getinput))
+            .then(response => response.json())
+            .then(json => {
+                var translatedText=json.contents.translated;
+                outputText.value=translatedText;
+                var msg = new SpeechSynthesisUtterance();
+            msg.text = translatedText;
+            window.speechSynthesis.speak(msg);
+            })
+            .catch(errorHandler);
+            
+    });
+</script>
+</html>

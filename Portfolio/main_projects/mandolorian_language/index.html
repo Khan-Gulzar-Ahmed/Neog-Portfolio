@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandalorian</title>
+    <style>
+        :root{
+            --background-color:aquamarine ;
+        }
+        body{
+            margin: 0px;
+            background-color: rgba(127, 255, 212, 0.219);
+        }
+        .container{
+            text-align: center;
+        }
+        h1{
+            margin: 0px;
+            padding: 30px 0px;
+            height: 150px;
+            background-color: var(--background-color);
+            box-sizing: border-box;
+        }
+        textarea{
+            width: 60%;
+            font-size: 25px;
+            border-radius: 5px;
+        }
+        button{
+            height: 50px;
+            width: 250px;
+            font-size: 20px;
+            background-color: var(--background-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #label{
+            text-align: justify;
+            padding: 5px 20%;
+           font-size: 25px;
+            height: 20vh;
+        }
+        
+        footer{
+            font-size: 18px;
+            height: 10vh;
+            position: absolute;
+            bottom: 0px;
+            padding: 3%;
+            background-color: var(--background-color);
+            
+        }
+        footer span{
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LET'S SEE HOW MANDALORIAN TALK !</h1>
+        <textarea name="input" id="input" cols="30" rows="8" placeholder="Enter in english..."></textarea><br> 
+        <button id="btn">Click for Mandalorian ⬇ </button><br><br>
+        <div id="label">
+            <label id="output"></label>
+        </div>
+        <footer> 
+            <span><u> About : </u></span><br>
+            Convert from English to Starwars Mando'a language. Mando'a was the language of the people native to the planet Mandalore. Mandalorians also lived on the moon of Mandalore, Concordia, Kalevala and the planet Concord Dawn. Star Wars is a Disney Movie and the related characters including Yoda , Sith , Jar jar binks are trademarks of Disney.
+        </footer>
+    </div>
+    
+</body>
+<script>
+
+      
+var inputText=document.getElementById('input');
+    var outputText=document.getElementById('output');
+    var btnclick=document.getElementById('btn');
+    var serverURL="https://api.funtranslations.com/translate/mandalorian.json";
+    function getTranslationURL(text){
+        return serverURL+ "?"+"text="+text;
+    }
+    function errorHandler(error){
+        console.log("Error Occured",error);
+        alert('Something went wrong. please try again later ! ');
+    }
+    btnclick.addEventListener('click',function(){
+            getinput=inputText.value;
+            fetch(getTranslationURL(getinput))
+            .then(response => response.json())
+            .then(json => {
+                var translatedText=json.contents.translated;
+                outputText.innerHTML=translatedText;  
+            })
+            .catch(errorHandler);
+    });
+</script>
+</html>

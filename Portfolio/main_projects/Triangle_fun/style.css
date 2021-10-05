@@ -1,0 +1,62 @@
+body
+{
+    background-color: rgba(157, 228, 161, 0.603);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 17px;
+    
+}
+
+#form
+{
+    position: relative;
+    line-height: 27px;
+}
+#container
+{
+    position: relative;
+    left: 30%;
+    border: 2px solid rgba(197, 197, 221, 0.349);
+    width: 550px;
+    padding: 15px;
+    background-color: rgba(236, 236, 241, 0.288);
+    border-radius: 10px;
+}
+.q1 .q2 .q3 .q4 .q5 .q6 .q7 .q8 .q9 .q10
+{
+    height: 50px;
+    width: 150px;
+}
+#name{
+    height: 25px;
+    width: 200px;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
+#submit{
+    position: relative;
+    height: 35px;
+    width: 100px;
+    font-size: 25px;
+    background-color: green;
+    color: black;
+    border-radius: 3px;
+    border: 1px solid rgb(106, 224, 95);
+    left: 80%;
+    cursor: pointer;
+    
+}
+label{
+    font-size: 15px;
+    color: rgb(199, 44, 70);
+}
+#score{
+    font-size: 25px;
+    color: blue;
+}
+#hignscore{
+    font-size: 25px;
+    color: blueviolet;
+}
+h1{
+    color: rgb(255, 255, 255);
+}

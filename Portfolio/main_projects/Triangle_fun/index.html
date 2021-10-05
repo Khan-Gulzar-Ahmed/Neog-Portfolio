@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle_Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+      
+        .link{
+            text-align: right;
+        }
+        header{
+            background-color: green;
+            padding: 10px;
+            margin: 10px 0px;
+            border-radius: 10px;
+        }
+        header div{
+            text-align: right;
+            
+        }
+        a{
+            padding: 5px;
+            margin: 5px 10px;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            font-weight:lighter;
+
+        }
+        .active{
+                font-weight: 900;
+               
+        }
+        
+           .footer-img{
+            border-radius: 40%;
+            opacity: 0.2;
+            margin:2px 5px;
+            height: 40px;
+            width: 40px;
+        }
+        #footer{
+           text-align: center;
+            padding: 10px;
+            border-top: 2px solid gainsboro;
+        }
+        #footer-head{
+            font-size:medium;
+            text-align: center;
+            color: grey;
+        }
+
+   
+    </style>
+</head>
+<body>
+    <header>
+        
+        <h1>FUN WITH TRIANGLE</h1>
+        <div class="a">
+        <a href="triangleornot.html" class="link ">Is Triangle?</a>
+        <a href="index.html" class="link active">Quiz</a>
+        <a href="areaoftriangle.html" class="link ">Area of Triangle</a>
+        <a href="hypotenuse.html" class="link ">Hypotenuse</a>
+    </div>
+    
+    </header>
+    
+    <div id="container">
+        <div id="form">
+            Enter Your name to play Game : <input type="text" class="name" id="name" placeholder="Enter your name ..">
+            <br><label id="nameLable"></label>
+            <h2>Select the appropriate option below:</h2>
+          Q1) :  What is a triangle?
+          <br>
+           &nbsp;&nbsp;&nbsp; <input type="radio" name="q1" class="q1" id="option1" value="A geometric figure
+           "> A geometric figure
+
+            <input type="radio" name="q1" class="q1" id="option2" value="An form of architecture
+            "> An form of architecture
+
+            <input type="radio" name="q1" class="q1" id="option3" value="A piece of art
+            "> A piece of art
+
+            
+
+<br>
+            Q2) : Which group does the triangle belong to?
+
+            <br>
+            &nbsp;&nbsp;&nbsp;<input type="radio" name="q2" class="q2" id="option5" value="polydor"> Polydor
+            <input type="radio" name="q2" class="q2" id="option6" value="potter"> Potter
+            <input type="radio" name="q2" class="q2" id="option7" value="polygon"> polygon
+            
+<br>
+            Q3) : How many edges does a triangle have? <br>
+            &nbsp;&nbsp;&nbsp; <input type="radio" name="q3" class="q3" id="option9" value="3"> 3
+            <input type="radio" name="q3" class="q3" id="option10" value="2"> 2
+            <input type="radio" name="q3" class="q3" id="option11" value="4"> 4
+            
+<br>
+            Q4) : What is the name of a triangle with equal vertices?
+            <br>
+            &nbsp;&nbsp;&nbsp; <input type="radio" name="q4" class="q4" id="option13" value="Equilateral"> Equilateral
+            <input type="radio" name="q4" class="q4" id="option14" value="Train"> Train
+            <input type="radio" name="q4" class="q4" id="option15" value="Triennial"> Triennial
+            
+<br>
+            Q5) : Which science studies the triangle?
+            <br>
+            &nbsp;&nbsp;&nbsp; <input type="radio" name="q5" class="q5" id="option17" value="Geometry"> Geometry
+            <input type="radio" name="q5" class="q5" id="option18" value="Biology"> Biology
+            <input type="radio" name="q5" class="q5" id="option19" value="Microbiology"> Microbiology
+            
+<br>
+            Q6) : How many dimensions does a triangle have?
+            <br>
+            &nbsp;&nbsp;&nbsp; <input type="radio" name="q6" class="q6" id="option21" value="4"> 4
+            <input type="radio" name="q6" class="q6" id="option22" value="3"> 3
+            <input type="radio" name="q6" class="q6" id="option23" value="2"> 2
+            
+<br>
+            Q7) :  What is the name of the triangle with no equal sides?
+            <br>
+            &nbsp;&nbsp;&nbsp; <input type="radio" name="q7" class="q7" id="option25" value="Scalene"> Scalene
+
+            <input type="radio" name="q7" class="q7" id="option26" value="Caitlyn"> Caitlyn
+            <input type="radio" name="q7" class="q7" id="option27" value="Galen"> Galen
+            
+<br>
+            Q8) : How many vertices does a triangle have?
+            <br>
+            &nbsp;&nbsp;&nbsp; <input type="radio" name="q8" class="q8" id="option29" value="3"> 3
+            <input type="radio" name="q8" class="q8" id="option30" value="5"> 5
+            <input type="radio" name="q8" class="q8" id="option31" value="4"> 4
+            
+<br>
+            Q9) : What is the name of a triangle with two equal vertices and one different vertice?
+            <br>
+            &nbsp;&nbsp;&nbsp; <input type="radio" name="q9" class="q9" id="option33" value="Plato"> Plato
+            <input type="radio" name="q9" class="q9" id="option34" value="Isosceles"> Isosceles
+            <input type="radio" name="q9" class="q9" id="option35" value="Aristotle"> Aristotle
+            
+<br>
+            Q10) : What is the longest side of a triangle called?
+            <br>
+          &nbsp;&nbsp;&nbsp;  <input type="radio" name="q10" class="q10" id="option37" value="Hyppo"> Hyppo
+            <input type="radio" name="q10" class="q10" id="option38" value="Hypopothamus"> Hypopothamus
+            <input type="radio" name="q10" class="q10" id="option39" value="Hypotenuse"> Hypotenuse
+           
+            <br>
+            <input type="submit" name="save" value="submit" id="submit">
+            
+<br>
+            <label id="score"></label><br>
+            <label id="hignscore"></label>
+        </div>
+        
+    </div>
+      <br><br><br>
+    <footer id="footer">
+        <p id="footer-head">Follow me on Social Media</p>
+                <a class="footer-link" href="https://github.com/Khan-Gulzar-Ahmed/" target="_blank">
+                    <img  class="footer-img" src="github.png" alt="github"></a>
+                <a  class="footer-link" href="https://discord.com/channels/Khan-Gulzar-Ahmed" target="_blank">
+                    <img  class="footer-img" src="discord.png" alt="Discord"></a>
+                <a  class="footer-link" href="https://www.linkedin.com/in/gulzar-ahmed-khan-b52729221/" target="_blank">
+                    <img class="footer-img"  src="link.png" alt="Link"></a>
+                <a  class="footer-link" href="https://twitter.com/khangulzar930" target="_blank">
+                    <img class="footer-img"  src="twitter.png" alt="Twitter"></a>
+    </footer>
+
+</body>
+<script>
+    
+    var score=0;
+    var highscore=9;
+
+    
+    
+    var ans1=document.getElementById('option1').value;123
+           var ans2=document.getElementById('option7').value;
+           var ans3=document.getElementById('option9').value;
+           var ans4=document.getElementById('option13').value;
+           var ans5=document.getElementById('option17').value;
+           var ans6=document.getElementById('option23').value;
+           var ans7=document.getElementById('option25').value;
+           var ans8=document.getElementById('option29').value;
+           var ans9=document.getElementById('option34').value;
+           var ans10=document.getElementById('option39').value;
+    var submit=document.getElementById('submit');
+    submit.addEventListener('click',function(){
+        var name=document.getElementById('name').value;
+        if(name!=''){
+            document.getElementById('nameLable').innerHTML="";
+            if(document.getElementById('option1').checked) {
+                score=score+1;
+            }
+            if(document.getElementById('option7').checked) {
+                score=score+1;
+            }
+            if(document.getElementById('option9').checked) {
+                score=score+1;
+            }
+            if(document.getElementById('option13').checked) {
+                score=score+1;
+            }
+            if(document.getElementById('option17').checked) {
+                score=score+1;
+            }
+            if(document.getElementById('option23').checked) {
+                score=score+1;
+            }
+            if(document.getElementById('option25').checked) {
+                score=score+1;
+            }
+            if(document.getElementById('option29').checked) {
+                score=score+1;
+            }
+            if(document.getElementById('option34').checked) {
+                score=score+1;
+            }
+            if(document.getElementById('option39').checked) {
+                score=score+1;
+            }
+        
+            if(score>=highscore)
+            {
+                document.getElementById('hignscore').innerHTML="Congratulations you beaten the High Score !!";
+            }
+            document.getElementById('score').innerHTML="Hello ! "+name+" Your Score is : "+score;
+            score=0;
+            
+        }
+        else
+        {
+            document.getElementById('nameLable').innerHTML="Name is mandatory to play Quiz";
+        }
+    });
+    
+    
+    </script>
+
+</html>

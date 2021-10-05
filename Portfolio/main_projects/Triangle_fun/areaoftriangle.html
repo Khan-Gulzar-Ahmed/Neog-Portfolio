@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of triangle</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style3.css">
+<style>
+           .footer-img{
+            border-radius: 40%;
+            opacity: 0.2;
+            margin:2px 5px;
+            height: 40px;
+            width: 40px;
+        }
+        #footer{
+            position: absolute;
+            bottom: 10px;
+            left: 40%;
+            padding: 10px;
+            border-top: 2px solid gainsboro;
+        }
+        #footer-head{
+            font-size:medium;
+            text-align: center;
+            color: grey;
+        }
+</style>
+
+</head>
+<body>
+    <header>
+        
+        <h1>FUN WITH TRIANGLE</h1>
+        <div class="a">
+        <a href="triangleornot.html" class="link ">Is Triangle?</a>
+        <a href="index.html" class="link ">Quiz</a>
+        <a href="areaoftriangle.html" class="link active">Area of Triangle</a>
+        <a href="hypotenuse.html" class="link ">Hypotenuse</a>
+    </div>
+    
+    </header>
+    <div style="text-align: center;  line-height: 30px;">
+        <h1>Find the area of Triangle</h1>
+        Enter Side One : <input type="number" class="number" id="one"><br><br>
+        Enter Side Two : <input type="number" class="number" id="two"><br><br>
+        Enter Side Three : <input type="number" class="number" id="three">
+        <p id="error"></p><br>
+        <button id="find" >Click To Calculate</button>
+        <p id="result"></p>
+      
+
+    </div>
+    <footer id="footer">
+        <p id="footer-head">Follow me on Social Media</p>
+                <a class="footer-link" href="https://github.com/Khan-Gulzar-Ahmed/" target="_blank">
+                    <img  class="footer-img" src="github.png" alt="github"></a>
+                <a  class="footer-link" href="https://discord.com/channels/Khan-Gulzar-Ahmed" target="_blank">
+                    <img  class="footer-img" src="discord.png" alt="Discord"></a>
+                <a  class="footer-link" href="https://www.linkedin.com/in/gulzar-ahmed-khan-b52729221/" target="_blank">
+                    <img class="footer-img"  src="link.png" alt="Link"></a>
+                <a  class="footer-link" href="https://twitter.com/khangulzar930" target="_blank">
+                    <img class="footer-img"  src="twitter.png" alt="Twitter"></a>
+    </footer>
+    
+    
+</body>
+<script>
+
+    var one=document.getElementById('one');
+    var two=document.getElementById('two');
+    var three=document.getElementById('three');
+    var error=document.getElementById('error');
+    var result=document.getElementById('result');
+  
+    var find=document.getElementById('find');
+
+    find.addEventListener('click',function(){
+
+       var angleone=Number(one.value);
+        var angletwo=Number(two.value);
+        var anglethree=Number(three.value);
+        
+        var semiParameter=(angleone+angletwo+anglethree)/2;
+        
+        var area=Math.sqrt(semiParameter*(semiParameter-angleone)*(semiParameter-angletwo)*(semiParameter-anglethree));
+
+        area=area.toFixed(4);
+        
+        if(angleone<=0 || angletwo<=0 || anglethree<=0){
+            error.innerHTML="Side should Greater than Zero !";
+        }
+        else{
+            result.innerHTML="Area of Triangle using Heron's Formula is : "+area;
+            error.innerHTML="";
+        }
+
+    });
+
+
+</script>
+</html>

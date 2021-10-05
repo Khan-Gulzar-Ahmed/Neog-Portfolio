@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change_Counter</title>
+    <style>
+        body{
+            background-color: rgb(231, 231, 186);
+        }
+        h1{
+            text-align: center;
+            color: green;
+        }
+        .container{
+            position: absolute;
+            top: 15%;
+            left: 30%;
+            min-width: 500px;
+            max-width: 600px;
+            height: 500px;
+            border: 1px solid;
+            line-height: 30px;
+            text-align: center;
+            font-size: 18px;
+            background-color: rgba(245, 245, 220, 0.39);
+            border: 1px solid rgba(245, 245, 220, 0.39);
+            border-radius: 5px;
+            padding: 5px;
+        }
+        input{
+            height: 30px;
+            width: 200px;
+            border-radius: 5px;
+        }
+        #find{
+            height: 30px;
+            width: 100px;
+            margin-left: 100px;
+            border-radius: 5px;
+            
+        }
+        .table{
+            position: relative;
+            left: 30px;
+            text-align: center;
+            padding: 5px;
+            table-layout: fixed;
+            
+        }
+        th,td{
+            padding: 10px;
+        }
+        table{
+         
+            background-color:  rgba(245, 245, 220, 0.7) ;
+        }
+        label{
+            font-size: medium;
+            color: red;
+        }
+        caption{
+            color: blue;
+        }
+        
+
+    </style>
+</head>
+<body>
+<h1>
+    Calculate the change amount  
+</h1>
+<div class="container">
+    Bill Amount : <input type="number" id="bill"><br><br>
+    Paid by Customer : <input type="number" id="amount"><br>
+    <label id="error"></label><br>
+    <input type="submit" value="Find Change" id="find">
+   
+    <br><br>
+   
+    <div class="table">
+        
+    <table border="3px">
+        <caption>Change Give Back to Customer</caption>
+      <tr>
+            
+        <th>2000</th>
+        <th>500</th>
+        <th>200</th>
+        <th>100</th>
+        <th>50</th>
+        <th>20</th>
+        <th>10</th>
+        <th>5</th>
+        <th>2</th>
+        <th>1</th>
+        </tr>
+        
+      <tr>
+        
+        <td id="1">0</td>
+        <td id="2">0</td>
+        <td id="3">0</td>
+        <td id="4">0</td>
+        <td id="5">0</td>
+        <td id="6">0</td>
+        <td id="7">0</td>
+        <td id="8">0</td>
+        <td id="9">0</td>
+        <td id="10">0</td>
+        </tr>
+      </table>
+    </div>
+      
+    
+
+</div>
+    </body>
+<script>
+
+var find=document.getElementById('find');
+var td=document.getElementsByTagName('td');
+var availableNote=[2000,500,200,100,50,20,10,5,2,1];
+var error=document.getElementById('error');
+
+var remain=0;
+var note=0;
+
+find.addEventListener('click',function(){
+ 
+  for(var j=0;td.length;j++){
+    td[j].innerHTML='0';
+  }
+});
+
+find.addEventListener('click',function(){
+   
+var bill=document.getElementById('bill').value;
+var pay=document.getElementById('amount').value;
+var change=pay-bill;
+  if(pay<bill){
+    error.innerHTML='Paid by customer should greater than bill amount !';
+  }
+  if(pay==''||bill==''){
+    error.innerHTML='Fields not be empty!';
+  }
+  for(var i=0;i<availableNote.length;i++){
+    if(change<availableNote[i]){
+      continue;
+    }
+    remain=change%availableNote[i];
+    note=Math.floor(change/availableNote[i]);
+     console.log(note);
+    td[i].innerHTML=note;
+    change=remain;
+    error.innerHTML='';
+  }
+});
+ 
+
+</script>
+</html>

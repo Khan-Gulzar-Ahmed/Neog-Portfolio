@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky DOB</title>
+    <style>
+        body{
+            background-color:beige;
+        }
+        .container{
+            width: 100%;
+            text-align: center;
+        }
+        input{
+            height: 40px;
+            width: 300px;
+            font-size: larger;
+            border-radius: 10px;
+        }
+        button{
+            height: 40px;
+            width: 250px;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: green;
+            cursor: pointer;
+        }
+        p{
+            color: green;
+            font-size: 25px;
+        }
+        h1{
+            color: blue;
+        }
+        #error{
+            font-size: medium;
+            color: red;
+        }
+        #result{
+            font-size: 30px;
+            font-weight: 700;
+        }
+        img{
+            border-radius: 40%;
+            opacity: 0.2;
+            margin:2px 5px;
+        }
+        footer{
+            position: absolute;
+            bottom: 10px;
+            left: 40%;
+            padding: 10px;
+            border-top: 2px solid gainsboro;
+        }
+        footer p{
+            font-size:medium;
+            text-align: center;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Check wich number is your Lucky !
+        </h1>
+        <p>Select your Date_Of_Birth : </p>
+        <input type="date" id="date">
+        <p>Enter the Number : </p>
+        <input type="number" id="number">
+       <br><br><br>
+        <button id="click">Click To Check</button>
+        <p id="error"> </p>
+        <p id="result"> </p>
+    </div>
+    <footer>
+        <p>Follow me on Social Media</p>
+                <a href="https://github.com/Khan-Gulzar-Ahmed/" target="_blank"><img src="github.png" alt="github"></a>
+                <a href="https://discord.com/channels/Khan-Gulzar-Ahmed" target="_blank"><img src="discord.png" alt="Discord"></a>
+                <a href="https://www.linkedin.com/in/gulzar-ahmed-khan-b52729221/" target="_blank"><img src="link.png" alt="Link"></a>
+                <a href="https://twitter.com/khangulzar930" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+    </footer>
+    
+</body>
+<script>
+  
+    var click=document.getElementById('click');
+    var error=document.getElementById('error');
+    var result=document.getElementById('result');
+
+    click.addEventListener('click',function(){
+        var getDate=document.getElementById('date');
+        var num=document.getElementById('number');
+
+        var splittedDate=getDate.value;
+        var sumOfDate=0;
+        var remain=1;
+        var getNumber=Number(num.value);
+        splittedDate=splittedDate.split('-');
+       console.log(splittedDate[0]);
+
+        if(getNumber==0 || splittedDate[0]==""){
+            error.innerHTML="Enter Number & Select Date ! ";
+            result.innerHTML="";
+           
+        }
+        
+        
+        else{
+          
+                   
+            for(var i=0;i<splittedDate.length;i++){
+                splittedDate[i]=Number(splittedDate[i]);
+                sumOfDate+=splittedDate[i];       
+            }
+             remain=sumOfDate%getNumber;
+            if(remain==0){
+            result.innerHTML="Congratulations ! This is your lucky Number ";
+            error.innerHTML="";
+                }
+            else{
+            result.innerHTML="Try another number ";
+            error.innerHTML="";
+            }
+        }
+     
+        
+     
+
+
+    });
+    
+</script>
+</html>

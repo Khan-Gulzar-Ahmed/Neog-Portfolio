@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypotenuse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
+    <style>
+        .footer-img{
+         border-radius: 40%;
+         opacity: 0.2;
+         margin:2px 5px;
+         height: 40px;
+         width: 40px;
+     }
+     #footer{
+         position: absolute;
+         bottom: 10px;
+         left: 40%;
+         padding: 10px;
+         border-top: 2px solid gainsboro;
+     }
+     #footer-head{
+         font-size:medium;
+         text-align: center;
+         color: grey;
+     }
+</style>
+</head>
+<body>
+    <header>
+        
+        <h1>FUN WITH TRIANGLE</h1>
+        <div class="a">
+        <a href="triangleornot.html" class="link ">Is Triangle?</a>
+        <a href="index.html" class="link ">Quiz</a>
+        <a href="areaoftriangle.html" class="link ">Area of Triangle</a>
+        <a href="hypotenuse.html" class="link active">Hypotenuse</a>
+    </div>
+    
+    </header>
+    <div class="container" style="text-align: center;color: green;">
+
+        <div style="text-align: center;  line-height: 30px;">
+            <h1>Find the  Hypotenuse</h1>
+            Enter Side One : <input type="number" class="number" id="one"><br><br>
+            Enter Side Two : <input type="number" class="number" id="two"><br><br>
+          
+            <p id="error"></p><br>
+            <button id="find" style="font-size: 15px;">Click To Calculate</button>
+            <p id="result"></p>
+          
+    
+        </div>
+<br>
+<br>
+<br>
+        Formula : 
+        <h1 style="color: green;">c<sup>2</sup>=a<sup>2</sup>+b<sup>2</sup></h1>
+    </div>
+   
+    <footer id="footer">
+        <p id="footer-head">Follow me on Social Media</p>
+                <a class="footer-link" href="https://github.com/Khan-Gulzar-Ahmed/" target="_blank">
+                    <img  class="footer-img" src="github.png" alt="github"></a>
+                <a  class="footer-link" href="https://discord.com/channels/Khan-Gulzar-Ahmed" target="_blank">
+                    <img  class="footer-img" src="discord.png" alt="Discord"></a>
+                <a  class="footer-link" href="https://www.linkedin.com/in/gulzar-ahmed-khan-b52729221/" target="_blank">
+                    <img class="footer-img"  src="link.png" alt="Link"></a>
+                <a  class="footer-link" href="https://twitter.com/khangulzar930" target="_blank">
+                    <img class="footer-img"  src="twitter.png" alt="Twitter"></a>
+    </footer>
+</body>
+<script>
+       var one=document.getElementById('one');
+    var two=document.getElementById('two');
+  
+    var error=document.getElementById('error');
+    var result=document.getElementById('result');
+  
+    var find=document.getElementById('find');
+
+    find.addEventListener('click',function(){
+
+       var angleone=Number(one.value);
+        var angletwo=Number(two.value);
+        var anglethree=Math.sqrt((angleone*angleone)+(angletwo*angletwo));
+        
+       
+        anglethree=anglethree.toFixed(4);
+        
+        if(angleone<=0 || angletwo<=0){
+            error.innerHTML="Side should Greater than Zero !";
+        }
+        else{
+            result.innerHTML="Hypotenuse of This Right Angle is  : "+anglethree;
+            error.innerHTML="";
+        }
+
+    });
+</script>
+</html>

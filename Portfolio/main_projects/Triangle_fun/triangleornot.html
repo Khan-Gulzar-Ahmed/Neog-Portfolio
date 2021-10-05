@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>triangleornot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <style>
+       
+        .footer-img{
+         border-radius: 40%;
+         opacity: 0.2;
+         margin:2px 5px;
+         height: 40px;
+         width: 40px;
+     }
+     #footer{
+         position: absolute;
+         bottom: 10px;
+         left: 40%;
+         padding: 10px;
+         border-top: 2px solid gainsboro;
+     }
+     #footer-head{
+         font-size:medium;
+         text-align: center;
+         color: grey;
+     }
+</style>
+  
+</head>
+<body>
+    <header>
+        
+        <h1>FUN WITH TRIANGLE</h1>
+        <div class="a">
+        <a href="triangleornot.html" class="link active">Is Triangle?</a>
+        <a href="index.html" class="link ">Quiz</a>
+        <a href="areaoftriangle.html" class="link ">Area of Triangle</a>
+        <a href="hypotenuse.html" class="link ">Hypotenuse</a>
+    </div>
+    
+    </header>
+
+    <div class="calculation">
+        <h1>Enter Angle and see is Triangle or Not</h1>
+        <img style="height: 200px; width: 200px;" src="https://www.pngitem.com/pimgs/m/376-3764803_types-of-triangles-worksheets-triangle-hd-png-download.png" alt="Triangle"><br><br>
+        Enter 1st Angle Degree : <input type="number" class="userinput" id="one"><br><br>
+        Enter 2nd Angle Degree: <input type="number" class="userinput" id="two"><br><br>
+        Enter 3rd Angle Degree: <input type="number" class="userinput" id="three"><br><br>
+         <button id="find">Show</button><br><br>
+        <label id="label"></label>
+    </div>
+
+      
+    <footer id="footer">
+        <p id="footer-head">Follow me on Social Media</p>
+                <a class="footer-link" href="https://github.com/Khan-Gulzar-Ahmed/" target="_blank">
+                    <img  class="footer-img" src="github.png" alt="github"></a>
+                <a  class="footer-link" href="https://discord.com/channels/Khan-Gulzar-Ahmed" target="_blank">
+                    <img  class="footer-img" src="discord.png" alt="Discord"></a>
+                <a  class="footer-link" href="https://www.linkedin.com/in/gulzar-ahmed-khan-b52729221/" target="_blank">
+                    <img class="footer-img"  src="link.png" alt="Link"></a>
+                <a  class="footer-link" href="https://twitter.com/khangulzar930" target="_blank">
+                    <img class="footer-img"  src="twitter.png" alt="Twitter"></a>
+    </footer>
+   
+</body>
+<script>
+  
+
+    var one=document.getElementById('one');
+    var two=document.getElementById('two');
+    var three=document.getElementById('three');
+    var label=document.getElementById('label');
+
+    var find=document.getElementById('find');
+    find.addEventListener('click',function(){
+
+            var angleone=Number(one.value);
+            var angletwo=Number(two.value);
+            var anglethree=Number(three.value);
+            var triangle=angleone+angletwo+anglethree;
+            console.log(triangle);
+            if(angleone>0 && angletwo>0 && anglethree>0)
+            {
+           
+            if(triangle==180){
+                label.innerHTML="This is Triangle .";
+                label.style.color='blue';
+            }
+            else{
+                label.innerHTML="This is not Triangle .";
+                label.style.color='red';
+            }
+        }
+        else
+        {
+            label.innerHTML="Enter correct angles";
+                label.style.color='red';
+        }
+    });
+    
+
+
+</script>
+</html>
