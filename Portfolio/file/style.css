@@ -1,0 +1,159 @@
+
+
+:root{
+    --main-color:rgba(100, 97, 97,0.5);
+    --text-color:black;
+    --hover-color:rgba(214, 212, 209, 0.705);
+    --footer-color:rgb(214, 212, 209);
+    --project-btn-color:antiquewhite;
+    --heading-color:rgb(10, 41, 10);
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: 'Roboto Mono', monospace;
+   
+    
+}
+body{
+        color: var(--text-color);
+        padding: 0px;
+        background-color: var(--main-color);
+        margin: 0px;
+        
+}
+#main-container{
+    display: flex;
+    margin: 0px;
+   
+    
+}
+.navigation{
+    position: relative;
+    width: 20%;
+    min-width: 100px;
+    text-align: center;
+    padding: 0px;
+    overflow: hidden;   
+}
+.navigation a{
+  font-size: 1.5rem;
+}
+.nav-bar{
+    display: inline-block;
+    padding: 20px 10px;
+    
+    width: 100%;
+    text-decoration: none;
+    margin: 0px;
+    color: var(--text-color);
+    
+}
+.nav-bar:hover{
+    background-color:var(--hover-color);
+    transition: 0.5s;
+}
+.show{
+    position: relative;
+    text-align: justify;
+    border-left: 2px solid var(--hover-color);
+    width: 90%;
+    height: 100vh;
+    padding-left: 50px;
+    margin-right: 20px;
+
+    
+}
+.nav-tab{
+    position: absolute;
+   display: none;
+   padding-bottom: 30px;
+   height: 98%;
+   width: 95%;
+}
+.social-icon{
+    
+    height: 75px;
+    width: 75px;
+    border-radius: 40%;
+    padding: 10px;
+    
+    
+}
+.social-icon:hover{
+    transform: rotate(360deg);
+    transition: 0.6s;
+}
+#social table{
+    table-layout: fixed;
+    height: 600px;
+    width: 100%;
+    padding: 0px;
+}
+#social td{
+  text-align: center;
+  border-radius: 40%;
+ 
+}
+#social td:hover{
+  background-color: var(--hover-color);
+  transition: 0.6s;
+
+}
+h1{
+  text-align: center;
+}
+#home{
+ 
+  text-align: center;
+  
+}
+#home img{
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+footer{
+  position: fixed;
+  bottom: 0px;
+  font-size: 0.7rem;
+  text-align: center;
+  height: 20px;
+  width: 100%;
+  background-color: var(--footer-color);
+}
+.source{
+  padding: 10px;
+  background-color: var(--project-btn-color);
+  color: black;
+  border: 1px solid var(--project-btn-color);
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.watch{
+padding: 10px;
+ 
+  color: black;
+  border: 1px solid var(--project-btn-color);
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+ul
+{
+  list-style-type: '\1F300    ';
+}
+h1{
+  color: var(--heading-color);
+}
+.project_table{
+  border-collapse: collapse;
+}
+.project_table td{
+  padding: 10px;
+}
+#blogs a{
+  
+  color: var(--text-color);
+}
